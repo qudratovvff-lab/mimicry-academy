@@ -1,0 +1,16 @@
+{
+  "name": "mimicry-body-language",
+  "version": "1.0.0",
+  "description": "Интерактивный тренажёр-игра по языку тела MIMICRY ACADEMY",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -c-1 -p 8082"
+  },
+  "keywords": [
+    "body-language",
+    "profiling",
+    "training"
+  ],
+  "author": "Mimicry Academy",
+  "license": "ISC"
+}

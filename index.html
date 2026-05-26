@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Мета-теги -->
+  <title>Mimicry | Академия Языка Тела и Профайлинга</title>
+  <meta name="description" content="Интерактивный тренажёр и обучающая игра по языку тела. Изучайте жесты, тренируйте распознавание микровыражений лица за 0.3 секунды и проходите симуляции переговоров на русском языке.">
+  <meta name="keywords" content="язык тела, профайлинг, детектор лжи, микровыражения, мимика лица, психология жестов, симулятор переговоров">
+  <meta name="author" content="Mimicry Academy">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Шапка приложения -->
+    <header class="app-header">
+      <div class="logo" id="app-logo">
+        <span class="logo-symbol">👁️</span>
+        <div class="logo-text">MIMICRY <span>ACADEMY</span></div>
+      </div>
+
+      <!-- Главная SPA навигация -->
+      <nav class="nav-links" aria-label="Основная навигация">
+        <button class="nav-item active" data-route="dashboard" id="nav-dashboard">
+          <span>📊</span> Профиль
+        </button>
+        <button class="nav-item" data-route="atlas" id="nav-atlas">
+          <span>📖</span> Атлас жестов
+        </button>
+        <button class="nav-item" data-route="library" id="nav-library">
+          <span>📚</span> Библиотека
+        </button>
+        <button class="nav-item" data-route="quiz" id="nav-quiz">
+          <span>🧠</span> Тренажёр
+        </button>
+        <button class="nav-item" data-route="simulator" id="nav-simulator">
+          <span>💬</span> Симулятор
+        </button>
+      </nav>
+
+      <!-- Элементы управления -->
+      <div class="header-controls">
+        <button class="sound-toggle-btn" id="sound-toggle" aria-label="Переключение звука">🔊</button>
+      </div>
+    </header>
+
+    <!-- Основная секция, куда SPA роутер будет монтировать экраны -->
+    <main id="app" aria-live="polite">
+      <!-- Контент загружается динамически через js/app.js -->
+    </main>
+
+    <!-- Подвал приложения -->
+    <footer class="app-footer">
+      <p>&copy; 2026 Mimicry Academy. Тренажёр языка тела и невербальной коммуникации. Разработано для интерактивного обучения.</p>
+    </footer>
+  </div>
+
+  <!-- Главный скрипт -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
