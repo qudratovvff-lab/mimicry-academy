@@ -31,23 +31,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { once: true });
 });
 
-// Настройка навигации
+// Настройка навигации (работает для шапки и мобильной нижней панели)
 function setupNavigation() {
   const navItems = document.querySelectorAll('.nav-item');
-  
+
   navItems.forEach(item => {
     item.addEventListener('click', (e) => {
       const route = e.currentTarget.getAttribute('data-route');
       if (route && ROUTES[route]) {
         audio.playClick();
-        
-        // Убираем класс active у старой кнопки и ставим новой
-        navItems.forEach(btn => btn.classList.remove('active'));
-        e.currentTarget.classList.add('active');
-        
+        setActiveRoute(route);
         navigate(route);
       }
     });
+  });
+}
+
+// Синхронизирует класс active во всех навигациях (шапка + bottom-nav)
+function setActiveRoute(route) {
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-route') === route);
   });
 }
 

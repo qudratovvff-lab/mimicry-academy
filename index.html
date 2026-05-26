@@ -69,6 +69,25 @@
     </footer>
   </div>
 
+  <!-- Мобильная нижняя навигация (отдельный элемент вне шапки — надёжно работает на iOS) -->
+  <nav class="bottom-nav" aria-label="Мобильная навигация">
+    <button class="nav-item active" data-route="dashboard">
+      <span>📊</span><span class="nav-label">Профиль</span>
+    </button>
+    <button class="nav-item" data-route="atlas">
+      <span>📖</span><span class="nav-label">Атлас</span>
+    </button>
+    <button class="nav-item" data-route="library">
+      <span>📚</span><span class="nav-label">Библиотека</span>
+    </button>
+    <button class="nav-item" data-route="quiz">
+      <span>🧠</span><span class="nav-label">Тренажёр</span>
+    </button>
+    <button class="nav-item" data-route="simulator">
+      <span>💬</span><span class="nav-label">Симулятор</span>
+    </button>
+  </nav>
+
   <!-- Главный скрипт -->
   <script type="module" src="js/app.js"></script>
   <script>
