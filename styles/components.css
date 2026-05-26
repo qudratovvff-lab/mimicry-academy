@@ -1339,13 +1339,391 @@
   }
 }
 
+/* ============================================================
+   МОБИЛЬНЫЕ СТИЛИ КОМПОНЕНТОВ (≤768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* --- Дашборд --- */
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .avatar-glow {
+    width: 90px;
+    height: 90px;
+    font-size: 52px;
+    margin-bottom: 14px;
+  }
+
+  .profile-card h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .stats-summary {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .stat-box {
+    padding: 10px 6px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .achievement-card {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .ach-icon {
+    font-size: 26px;
+  }
+
+  .ach-name {
+    font-size: 14px;
+  }
+
+  .recommendations-card {
+    margin-top: 14px;
+  }
+
+  .recommendations-card li {
+    font-size: 14px;
+  }
+
+  /* --- Атлас жестов --- */
+  .atlas-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+
+  .filter-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    padding-bottom: 2px;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .atlas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gesture-card {
+    padding: 12px 10px;
+  }
+
+  .gesture-illustration {
+    width: 76px;
+    height: 76px;
+    margin: 6px 0;
+  }
+
+  .gesture-card h3 {
+    font-size: 13px;
+    min-height: auto;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .gesture-short-desc {
+    display: none;
+  }
+
+  .gesture-badge {
+    font-size: 9px;
+    padding: 3px 6px;
+    top: 8px;
+    right: 8px;
+  }
+
+  /* Модальное окно → bottom sheet */
+  .gesture-modal-overlay {
+    align-items: flex-end;
+  }
+
+  .gesture-modal-content {
+    width: 100%;
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 20px 20px 0 0;
+    padding: 20px 16px;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .close-modal-btn {
+    top: 14px;
+    right: 16px;
+    font-size: 26px;
+  }
+
+  .modal-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .modal-left {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .modal-illustration {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .modal-left h2 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .modal-xp-alert {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .modal-section {
+    margin-bottom: 14px;
+  }
+
+  .modal-section h3 {
+    font-size: 13px;
+  }
+
+  .modal-section p {
+    font-size: 14px;
+  }
+
+  /* --- Викторина --- */
+  .quiz-modes-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .mode-card {
+    padding: 22px 16px;
+  }
+
+  .mode-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .mode-card h2 {
+    font-size: 19px;
+  }
+
+  .quiz-card {
+    padding: 18px 14px;
+  }
+
+  .quiz-question-box h2 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .option-btn {
+    padding: 13px 14px;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .option-marker {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .micro-avatar-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .micro-face-box {
+    width: 150px;
+    height: 150px;
+  }
+
+  .results-card {
+    padding: 22px 14px;
+  }
+
+  .medal-icon {
+    font-size: 52px;
+  }
+
+  .results-header h1 {
+    font-size: 22px;
+  }
+
+  .results-summary {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 16px 0;
+  }
+
+  .res-stat-value {
+    font-size: 20px;
+  }
+
+  .results-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* --- Симулятор --- */
+  .scenarios-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .simulator-header {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .sim-title-box h2 {
+    font-size: 17px;
+  }
+
+  .sim-metrics {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .simulator-main-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .character-visual-card {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .char-avatar-container {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .cue-description-box {
+    flex: 1;
+  }
+
+  .cue-description-box p {
+    font-size: 13px;
+  }
+
+  .dialogue-box {
+    padding: 16px 14px;
+    min-height: auto;
+  }
+
+  .char-speech-text {
+    font-size: 15px;
+  }
+
+  .choice-btn {
+    padding: 12px 14px;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .result-end-card {
+    padding: 22px 14px;
+  }
+
+  .result-end-header h1 {
+    font-size: 22px;
+  }
+
+  .final-metrics-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 16px 0;
+  }
+
+  .final-metric-val {
+    font-size: 20px;
+  }
+
+  .result-end-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* --- Библиотека --- */
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .reader-content-card {
+    padding: 20px 14px;
+  }
+
+  .reader-meta h1 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .reader-text {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .reader-text h3 {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 600px) {
   .stats-summary {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
   .results-summary {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
   .results-actions {
     flex-direction: column;
@@ -1354,8 +1732,7 @@
     flex-direction: column;
   }
   .final-metrics-row {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

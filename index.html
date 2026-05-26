@@ -2,13 +2,22 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   
   <!-- SEO Мета-теги -->
   <title>Mimicry | Академия Языка Тела и Профайлинга</title>
   <meta name="description" content="Интерактивный тренажёр и обучающая игра по языку тела. Изучайте жесты, тренируйте распознавание микровыражений лица за 0.3 секунды и проходите симуляции переговоров на русском языке.">
   <meta name="keywords" content="язык тела, профайлинг, детектор лжи, микровыражения, мимика лица, психология жестов, симулятор переговоров">
   <meta name="author" content="Mimicry Academy">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#07050f">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mimicry">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
 
   <!-- Стили -->
   <link rel="stylesheet" href="styles/main.css">
@@ -27,19 +36,19 @@
       <!-- Главная SPA навигация -->
       <nav class="nav-links" aria-label="Основная навигация">
         <button class="nav-item active" data-route="dashboard" id="nav-dashboard">
-          <span>📊</span> Профиль
+          <span>📊</span><span class="nav-label">Профиль</span>
         </button>
         <button class="nav-item" data-route="atlas" id="nav-atlas">
-          <span>📖</span> Атлас жестов
+          <span>📖</span><span class="nav-label">Атлас</span>
         </button>
         <button class="nav-item" data-route="library" id="nav-library">
-          <span>📚</span> Библиотека
+          <span>📚</span><span class="nav-label">Библиотека</span>
         </button>
         <button class="nav-item" data-route="quiz" id="nav-quiz">
-          <span>🧠</span> Тренажёр
+          <span>🧠</span><span class="nav-label">Тренажёр</span>
         </button>
         <button class="nav-item" data-route="simulator" id="nav-simulator">
-          <span>💬</span> Симулятор
+          <span>💬</span><span class="nav-label">Симулятор</span>
         </button>
       </nav>
 
@@ -62,5 +71,10 @@
 
   <!-- Главный скрипт -->
   <script type="module" src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+    }
+  </script>
 </body>
 </html>

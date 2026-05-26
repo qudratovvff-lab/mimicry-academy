@@ -426,25 +426,136 @@ main {
   to { opacity: 0; transform: scale(0.9); }
 }
 
-/* Адаптивность для общих элементов */
+/* ============================================================
+   МОБИЛЬНАЯ ВЕРСИЯ — нижняя панель навигации (как нативное приложение)
+   ============================================================ */
 @media (max-width: 768px) {
+  /* Шапка: только лого + кнопка звука */
   .app-header {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 16px;
+    gap: 0;
   }
+
+  .logo {
+    font-size: 18px;
+    gap: 8px;
+  }
+
+  .logo-symbol {
+    font-size: 22px;
+  }
+
+  /* Навигация → фиксированная нижняя панель */
   .nav-links {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+    background: rgba(7, 5, 15, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid var(--clr-border);
+    border-bottom: none;
+    padding: 6px 0;
+    padding-bottom: env(safe-area-inset-bottom, 6px);
+    z-index: 200;
+    justify-content: space-around;
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
   }
+
   .nav-item {
-    padding: 8px 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 5px 2px;
+    border-radius: 10px;
+    font-size: 10px;
+    flex: 1;
+    min-width: 0;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: var(--clr-text-muted);
+    transition: color 0.2s ease;
+  }
+
+  .nav-item span:first-child {
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  .nav-label {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 64px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .nav-item.active {
+    color: var(--clr-cyan) !important;
+  }
+
+  .nav-item.active span:first-child {
+    filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.8));
+  }
+
+  /* Основной контент — отступы под шапку и нижний бар */
+  main {
+    padding: 16px 12px;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 8px));
+  }
+
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .section-header h1 {
+    font-size: 22px;
+  }
+
+  .section-header p {
     font-size: 13px;
   }
-  main {
-    padding: 20px 15px;
+
+  .glass-card {
+    padding: 14px;
+    border-radius: 12px;
   }
-  .section-header h1 {
-    font-size: 28px;
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-height: 46px;
+  }
+
+  /* Тост-уведомления — над нижней навигацией */
+  .achievement-toast {
+    bottom: calc(76px + env(safe-area-inset-bottom, 8px));
+    right: 12px;
+    left: 12px;
+    max-width: none;
+  }
+
+  /* Баннер повышения уровня */
+  .level-up-content {
+    padding: 28px 20px;
+    width: 92%;
+  }
+
+  .level-up-content h1 {
+    font-size: 22px;
+  }
+
+  /* Футер скрыт — нижний бар его заменяет */
+  .app-footer {
+    display: none;
   }
 }
